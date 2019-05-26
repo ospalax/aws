@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 # Inspired by and heavily changed:
 # https://read.acloud.guru/aws-greengrass-the-missing-manual-2ac8df2fbdf4
 
@@ -93,8 +95,9 @@ def run_as_user(username):
 
 # we expect two arguments: <username> <json_status_filename>
 arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument("username")
-arg_parser.add_argument("status_filename")
+arg_parser.add_argument("username", metavar="<username>", help="run this program as this user")
+arg_parser.add_argument("status_filename", metavar="<status_filename>", help="filepath to the json where info will be stored")
+arg_parser.add_argument("gg_group", metavar="<greengrass_group>", help="name of the created aws greengrass group")
 args = arg_parser.parse_args()
 
 try:
@@ -104,15 +107,8 @@ except Exception:
     msg("[!] We will abort the configuration and do nothing")
     sys.exit(1)
 
-# do we have name of the created group?
-try:
-    GG_GROUP_NAME = os.environ["ONEAPP_AWSGG_GROUP"]
-except KeyError:
-    msg("[!] Missing ONEAPP_AWSGG_GROUP environmental variable")
-    msg("[!] We will abort the configuration and do nothing")
-    sys.exit(1)
-
 # also we right away create other needed names:
+GG_GROUP_NAME = args.gg_group
 GG_STATUS_FILENAME = args.status_filename
 GG_CORE_NAME = underscores(GG_GROUP_NAME) + "_Core"
 GG_POLICY_NAME = GG_CORE_NAME + "-policy"
