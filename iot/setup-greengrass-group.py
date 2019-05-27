@@ -93,11 +93,11 @@ def run_as_user(username):
 
     os.environ["HOME"] = pwd.getpwnam(username).pw_dir
 
-# we expect two arguments: <username> <json_status_filename>
+# we expect three arguments: <username> <greengrass_group> <json_status_filename>
 arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument("username", metavar="<username>", help="run this program as this user")
-arg_parser.add_argument("status_filename", metavar="<status_filename>", help="filepath to the json where info will be stored")
 arg_parser.add_argument("gg_group", metavar="<greengrass_group>", help="name of the created aws greengrass group")
+arg_parser.add_argument("status_filename", metavar="<status_filename>", help="filepath to the json where info will be stored")
 args = arg_parser.parse_args()
 
 try:
