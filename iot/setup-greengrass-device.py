@@ -210,7 +210,7 @@ gg_group = find_gg_group(gg, GG_GROUP_NAME)
 
 # greengrass group of this name must exist already
 if gg_group is None:
-    msg("[!] The greengrass group of this name does not exist: " + gg_group["Name"])
+    msg("[!] The greengrass group of this name does not exist: " + GG_GROUP_NAME)
     msg("[!] We will abort the configuration and do nothing")
     sys.exit(1)
 
