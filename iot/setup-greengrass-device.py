@@ -288,11 +288,11 @@ gg_group_version = update_group(gg, gg_group, gg_group_definitions)
 
 # store everything so far created into the json status
 gg_status = {
-    "group_version": gg_group_version,
-    "device_thing": gg_device_thing,
-    "keys_cert": gg_keys_cert,
-    "device_definition": gg_device_definition,
-    "device_definition_version": gg_device_definition_version,
+    "groupVersion": gg_group_version,
+    "deviceThing": gg_device_thing,
+    "keysCert": gg_keys_cert,
+    "deviceDefinition": gg_device_definition,
+    "deviceDefinitionVersion": gg_device_definition_version,
     "policy": gg_device_policy
 }
 

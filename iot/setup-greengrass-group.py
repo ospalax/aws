@@ -221,10 +221,10 @@ gg_group = gg.create_group(
 # store everything so far created into the json status
 gg_status = {
     "group": gg_group,
-    "core_thing": gg_core_thing,
-    "keys_cert": gg_keys_cert,
-    "core_definition": gg_core_definition,
-    "core_definition_version": gg_core_definition_version,
+    "coreThing": gg_core_thing,
+    "keysCert": gg_keys_cert,
+    "coreDefinition": gg_core_definition,
+    "coreDefinitionVersion": gg_core_definition_version,
     "policy": gg_policy
 }
 
