@@ -106,7 +106,8 @@ iot = boto3.client("iot")
 gg_group = find_gg_group_with_core(gg, args.corething_arn)
 
 # dump json with extracted group
-print(json.dumps(gg_group, indent=4, sort_keys=True))
+gg_group_json = {'group': gg_group}
+print(json.dumps(gg_group_json, indent=4, sort_keys=True))
 
 # successfully finish
 sys.exit(0)
