@@ -12,7 +12,7 @@ import sys
 import argparse
 
 def underscores(s):
-    s = re.sub(r"[^\w\s]", "", s)
+    s = re.sub(r"[^\w\s\-_]", "", s)
     s = re.sub(r"\s+", "_", s)
 
     return s
